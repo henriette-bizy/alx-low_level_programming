@@ -1,20 +1,23 @@
 #include "main.h"
+
 /**
- * _memset: function to write constansts on some reserved bytes
- * @s: pointer holding the memory
- * @b:the constant byte to fill the constant
- * @n: number of bytes to fill the constant
- * Return : *s
+ * _memset - fills the first n bytes of the memory area
+ * pointed to by s with the constant byte b
+ *
+ * @s: pointer to memory area
+ * @b: constant byte
+ * @n: byte size
+ *
+ * Return: a pointer to the memory area
  */
 
- char *_memset(char *s, char b, unsigned int n)
-{ 
-      unsigned int i;
+char *_memset(char *s, char b, unsigned int n)
+{
+	char *p = s;
 
-      for(i = 0, i< n, i++)
-      {
-          s[i] = b;
-      }
-      return (s); 
- }
-
+	while (n--)
+	{
+		*p++ = b;
+	}
+return (s);
+}
