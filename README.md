@@ -1,1 +1,1 @@
- C low level programming language
+argc and argv
