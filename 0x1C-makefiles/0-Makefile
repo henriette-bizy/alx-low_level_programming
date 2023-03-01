@@ -1,2 +1,23 @@
-all: main.c holberton.c 
-	gcc main.c holberton.c -o holberton
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+SRC = main.c functions.c
+OBJ = $(SRC:.c=.o)
+
+school: $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+all: school
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -f $(OBJ) school
+
+.PHONY: all clean
+
+
+
+
+
+
